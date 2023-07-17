@@ -1,6 +1,10 @@
 Change Log
 ==========
 
+3.6.0.post1
+-----------
+- BUG: Cython 3 compatibility fixes (issue #1321)
+
 3.6.0
 ------
 - DEP: Minimum supported Python version 3.9 (issue #1111)
