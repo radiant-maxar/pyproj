@@ -6,7 +6,7 @@ from distutils.util import strtobool
 from libc.stdlib cimport free, malloc
 
 from pyproj.compat import cstrencode, pystrdecode
-from pyproj.exceptions import DataDirError, ProjError
+from pyproj.exceptions import ProjError
 
 # for logging the internal PROJ messages
 # https://docs.python.org/3/howto/logging.html#configuring-logging-for-a-library
@@ -77,7 +77,7 @@ def get_user_data_dir(create=False):
     ))
 
 
-cdef void pyproj_log_function(void *user_data, int level, const char *error_msg) nogil:
+cdef void pyproj_log_function(void *user_data, int level, const char *error_msg) nogil noexcept:
     """
     Log function for catching PROJ errors.
     """
